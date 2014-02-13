@@ -14,6 +14,12 @@ $layout-gutter:         $base-spacing-unit !default;
 $layout-gutter--small:  halve($layout-gutter) !default;
 $layout-gutter--large:  double($layout-gutter) !default;
 
+$enable-layout--middle: false !default;
+$enable-layout--bottom: false !default;
+$enable-layout--rev:    false !default;
+$enable-layout--flush:  false !default;
+$enable-layout--right:  false !default;
+$enable-layout--center: false !default;
 $enable-layout--small:  false !default;
 $enable-layout--large:  false !default;
 
@@ -72,22 +78,31 @@ $global-border-box: false !default;
 /**
  * Align layout items to the vertical centers or bottoms of each other.
  */
-.#{$namespace}layout--middle,
-%#{$namespace}layout--middle {
 
-    > .#{$namespace}layout__item,
-    > %#{$namespace}layout__item {
-        vertical-align: middle;
+@if ($enable-layout--middle == true) {
+
+    .#{$namespace}layout--middle,
+    %#{$namespace}layout--middle {
+
+        > .#{$namespace}layout__item,
+        > %#{$namespace}layout__item {
+            vertical-align: middle;
+        }
+
     }
 
 }
 
-.#{$namespace}layout--bottom,
-%#{$namespace}layout--bottom {
+@if ($enable-layout--bottom == true) {
 
-    > .#{$namespace}layout__item,
-    > %#{$namespace}layout__item {
-        vertical-align: bottom;
+    .#{$namespace}layout--bottom,
+    %#{$namespace}layout--bottom {
+
+        > .#{$namespace}layout__item,
+        > %#{$namespace}layout__item {
+            vertical-align: bottom;
+        }
+
     }
 
 }
@@ -100,15 +115,20 @@ $global-border-box: false !default;
  * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your markup
  * will display in order 4, 3, 2, 1 on your page.
  */
-.#{$namespace}layout--rev,
-%#{$namespace}layout--rev {
-    direction: rtl;
-    text-align: left;
 
-    > .#{$namespace}layout__item,
-    > %#{$namespace}layout__item {
-        direction: ltr;
+@if ($enable-layout--rev == true) {
+
+    .#{$namespace}layout--rev,
+    %#{$namespace}layout--rev {
+        direction: rtl;
         text-align: left;
+
+        > .#{$namespace}layout__item,
+        > %#{$namespace}layout__item {
+            direction: ltr;
+            text-align: left;
+        }
+
     }
 
 }
@@ -120,13 +140,18 @@ $global-border-box: false !default;
 /**
  * Layout items without gutters.
  */
-.#{$namespace}layout--flush,
-%#{$namespace}layout--flush {
-    margin-left: 0;
 
-    > .#{$namespace}layout__item,
-    > %#{$namespace}layout__item {
-        padding-left: 0;
+@if ($enable-layout--flush == true) {
+
+    .#{$namespace}layout--flush,
+    %#{$namespace}layout--flush {
+        margin-left: 0;
+
+        > .#{$namespace}layout__item,
+        > %#{$namespace}layout__item {
+            padding-left: 0;
+        }
+
     }
 
 }
@@ -138,13 +163,18 @@ $global-border-box: false !default;
 /**
  * Make the layout items fill up from the right hand side.
  */
-.#{$namespace}layout--right,
-%#{$namespace}layout--right {
-    text-align: right;
 
-    > .#{$namespace}layout__item,
-    > %#{$namespace}layout__item {
-        text-align: left;
+@if ($enable-layout--right == true) {
+
+    .#{$namespace}layout--right,
+    %#{$namespace}layout--right {
+        text-align: right;
+
+        > .#{$namespace}layout__item,
+        > %#{$namespace}layout__item {
+            text-align: left;
+        }
+
     }
 
 }
@@ -152,13 +182,18 @@ $global-border-box: false !default;
 /**
  * Make the layout items fill up from the center outward.
  */
-.#{$namespace}layout--center,
-%#{$namespace}layout--center {
-    text-align: center;
 
-    > .#{$namespace}layout__item,
-    > %#{$namespace}layout__item {
-        text-align: left;
+@if ($enable-layout--center == true) {
+
+    .#{$namespace}layout--center,
+    %#{$namespace}layout--center {
+        text-align: center;
+
+        > .#{$namespace}layout__item,
+        > %#{$namespace}layout__item {
+            text-align: left;
+        }
+
     }
 
 }
