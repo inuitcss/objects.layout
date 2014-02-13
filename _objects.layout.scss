@@ -2,6 +2,10 @@
     #LAYOUT
 \*------------------------------------*/
 
+$layout-gutter:         $base-spacing-unit !default;
+$layout-gutter--small:  halve($layout-gutter) !default;
+$layout-gutter--large:  double($layout-gutter) !default;
+
 /**
  * The inuitcss layout system uses `box-sizing: border-box;` and
  * `display: inline-block;` to create an extremely powerful, flexible
@@ -32,7 +36,7 @@ $global-border-box: false !default;
     list-style: none;
     margin:  0;
     padding: 0;
-    margin-left: -$base-spacing-unit;
+    margin-left: -$layout-gutter;
 }
 
     /**
@@ -45,7 +49,7 @@ $global-border-box: false !default;
     .#{$namespace}layout__item,
     %#{$namespace}layout__item {
         display: inline-block; /* [1] */
-        padding-left: $base-spacing-unit; /* [2] */
+        padding-left: $layout-gutter; /* [2] */
         vertical-align: top; /* [3] */
         width: 100%; /* [4] */
 
@@ -164,22 +168,22 @@ $global-border-box: false !default;
  */
 .#{$namespace}layout--small,
 %#{$namespace}layout--small {
-    margin-left: -(halve($base-spacing-unit));
+    margin-left: -($layout-gutter--small);
 
     > .#{$namespace}layout__item,
     > %#{$namespace}layout__item {
-        padding-left: halve($base-spacing-unit);
+        padding-left: $layout-gutter--small;
     }
 
 }
 
 .#{$namespace}layout--large,
 %#{$namespace}layout--large {
-    margin-left: -(double($base-spacing-unit));
+    margin-left: -($layout-gutter--large);
 
     > .#{$namespace}layout__item,
     > %#{$namespace}layout__item {
-        padding-left: double($base-spacing-unit);
+        padding-left: $layout-gutter--large;
     }
 
 }
