@@ -2,16 +2,20 @@
     #LAYOUT
 \*------------------------------------*/
 
-$layout-gutter:         $base-spacing-unit !default;
-$layout-gutter--small:  halve($layout-gutter) !default;
-$layout-gutter--large:  double($layout-gutter) !default;
-
 /**
  * The inuitcss layout system uses `box-sizing: border-box;` and
  * `display: inline-block;` to create an extremely powerful, flexible
  * alternative to the traditional grid system. Combine the layout items with
  * the widths found in `trumps.widths`.
+ *
+ * Predefine the variables below in order to alter and enable specific features.
  */
+$layout-gutter:         $base-spacing-unit !default;
+$layout-gutter--small:  halve($layout-gutter) !default;
+$layout-gutter--large:  double($layout-gutter) !default;
+
+$enable-layout--small:  false !default;
+$enable-layout--large:  false !default;
 
 
 
@@ -29,7 +33,7 @@ $global-border-box: false !default;
 
 
 /**
- *
+ * Begin a layout group.
  */
 .#{$namespace}layout,
 %#{$namespace}layout {
@@ -166,24 +170,33 @@ $global-border-box: false !default;
 /**
  * Different size variations.
  */
-.#{$namespace}layout--small,
-%#{$namespace}layout--small {
-    margin-left: -($layout-gutter--small);
 
-    > .#{$namespace}layout__item,
-    > %#{$namespace}layout__item {
-        padding-left: $layout-gutter--small;
+@if ($enable-layout--small == true) {
+
+    .#{$namespace}layout--small,
+    %#{$namespace}layout--small {
+        margin-left: -($layout-gutter--small);
+
+        > .#{$namespace}layout__item,
+        > %#{$namespace}layout__item {
+            padding-left: $layout-gutter--small;
+        }
+
     }
 
 }
 
-.#{$namespace}layout--large,
-%#{$namespace}layout--large {
-    margin-left: -($layout-gutter--large);
+@if ($enable-layout--large == true) {
 
-    > .#{$namespace}layout__item,
-    > %#{$namespace}layout__item {
-        padding-left: $layout-gutter--large;
+    .#{$namespace}layout--large,
+    %#{$namespace}layout--large {
+        margin-left: -($layout-gutter--large);
+
+        > .#{$namespace}layout__item,
+        > %#{$namespace}layout__item {
+            padding-left: $layout-gutter--large;
+        }
+
     }
 
 }
