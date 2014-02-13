@@ -14,14 +14,14 @@ $layout-gutter:         $base-spacing-unit !default;
 $layout-gutter--small:  halve($layout-gutter) !default;
 $layout-gutter--large:  double($layout-gutter) !default;
 
-$enable-layout--middle: false !default;
-$enable-layout--bottom: false !default;
-$enable-layout--rev:    false !default;
-$enable-layout--flush:  false !default;
-$enable-layout--right:  false !default;
-$enable-layout--center: false !default;
 $enable-layout--small:  false !default;
 $enable-layout--large:  false !default;
+$enable-layout--flush:  false !default;
+$enable-layout--rev:    false !default;
+$enable-layout--middle: false !default;
+$enable-layout--bottom: false !default;
+$enable-layout--right:  false !default;
+$enable-layout--center: false !default;
 
 
 
@@ -76,31 +76,56 @@ $global-border-box: false !default;
 
 
 /**
- * Align layout items to the vertical centers or bottoms of each other.
+ * Different size variations.
  */
 
-@if ($enable-layout--middle == true) {
+@if ($enable-layout--small == true) {
 
-    .#{$namespace}layout--middle,
-    %#{$namespace}layout--middle {
+    .#{$namespace}layout--small,
+    %#{$namespace}layout--small {
+        margin-left: -($layout-gutter--small);
 
         > .#{$namespace}layout__item,
         > %#{$namespace}layout__item {
-            vertical-align: middle;
+            padding-left: $layout-gutter--small;
         }
 
     }
 
 }
 
-@if ($enable-layout--bottom == true) {
+@if ($enable-layout--large == true) {
 
-    .#{$namespace}layout--bottom,
-    %#{$namespace}layout--bottom {
+    .#{$namespace}layout--large,
+    %#{$namespace}layout--large {
+        margin-left: -($layout-gutter--large);
 
         > .#{$namespace}layout__item,
         > %#{$namespace}layout__item {
-            vertical-align: bottom;
+            padding-left: $layout-gutter--large;
+        }
+
+    }
+
+}
+
+
+
+
+
+/**
+ * Layout items without gutters.
+ */
+
+@if ($enable-layout--flush == true) {
+
+    .#{$namespace}layout--flush,
+    %#{$namespace}layout--flush {
+        margin-left: 0;
+
+        > .#{$namespace}layout__item,
+        > %#{$namespace}layout__item {
+            padding-left: 0;
         }
 
     }
@@ -138,18 +163,31 @@ $global-border-box: false !default;
 
 
 /**
- * Layout items without gutters.
+ * Align layout items to the vertical centers or bottoms of each other.
  */
 
-@if ($enable-layout--flush == true) {
+@if ($enable-layout--middle == true) {
 
-    .#{$namespace}layout--flush,
-    %#{$namespace}layout--flush {
-        margin-left: 0;
+    .#{$namespace}layout--middle,
+    %#{$namespace}layout--middle {
 
         > .#{$namespace}layout__item,
         > %#{$namespace}layout__item {
-            padding-left: 0;
+            vertical-align: middle;
+        }
+
+    }
+
+}
+
+@if ($enable-layout--bottom == true) {
+
+    .#{$namespace}layout--bottom,
+    %#{$namespace}layout--bottom {
+
+        > .#{$namespace}layout__item,
+        > %#{$namespace}layout__item {
+            vertical-align: bottom;
         }
 
     }
@@ -192,44 +230,6 @@ $global-border-box: false !default;
         > .#{$namespace}layout__item,
         > %#{$namespace}layout__item {
             text-align: left;
-        }
-
-    }
-
-}
-
-
-
-
-
-/**
- * Different size variations.
- */
-
-@if ($enable-layout--small == true) {
-
-    .#{$namespace}layout--small,
-    %#{$namespace}layout--small {
-        margin-left: -($layout-gutter--small);
-
-        > .#{$namespace}layout__item,
-        > %#{$namespace}layout__item {
-            padding-left: $layout-gutter--small;
-        }
-
-    }
-
-}
-
-@if ($enable-layout--large == true) {
-
-    .#{$namespace}layout--large,
-    %#{$namespace}layout--large {
-        margin-left: -($layout-gutter--large);
-
-        > .#{$namespace}layout__item,
-        > %#{$namespace}layout__item {
-            padding-left: $layout-gutter--large;
         }
 
     }
