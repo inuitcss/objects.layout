@@ -1,0 +1,16 @@
+{
+  "name": "inuit-layout",
+  "version": "0.1.0",
+  "homepage": "https://github.com/inuitcss/objects.layout",
+  "authors": [
+    "Harry Roberts <harry@csswizardry.com>"
+  ],
+  "description": "A simple layout abstraction in the inuitcss framework",
+  "main": "_objects.layout.scss",
+  "keywords": [
+    "inuitcss",
+    "oocss",
+    "css"
+  ],
+  "license": "Apache"
+}
