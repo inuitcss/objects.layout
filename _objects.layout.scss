@@ -7,9 +7,9 @@
  * `display: inline-block;` to create an extremely powerful, flexible
  * alternative to the traditional grid system. Combine the layout items with
  * the widths found in `trumps.widths`.
- *
- * Predefine the variables below in order to alter and enable specific features.
  */
+
+// Predefine the variables below in order to alter and enable specific features.
 $inuit-layout-gutter:           $inuit-base-spacing-unit !default;
 $inuit-layout-gutter--small:    halve($inuit-layout-gutter) !default;
 $inuit-layout-gutter--large:    double($inuit-layout-gutter) !default;
@@ -27,11 +27,9 @@ $inuit-enable-layout--center:   false !default;
 
 
 
-/**
- * Here we set a variable assuming that `box-sizing: border-box;` is not set
- * globally. If it has been previously been defined, the following variable will
- * be overriden and will be set to `true`.
- */
+// Here we set a variable assuming that `box-sizing: border-box;` is not set
+// globally. If it has been previously been defined, the following variable will
+// be overriden and will be set to `true`.
 $inuit-global-border-box: false !default;
 
 
@@ -75,11 +73,11 @@ $inuit-global-border-box: false !default;
 
 
 
-/**
- * Different size variations.
- */
-
 @if ($inuit-enable-layout--small == true) {
+
+    /**
+     * Layouts with small gutters.
+     */
 
     .#{$inuit-namespace}layout--small,
     %#{$inuit-namespace}layout--small {
@@ -95,6 +93,10 @@ $inuit-global-border-box: false !default;
 }
 
 @if ($inuit-enable-layout--large == true) {
+
+    /**
+     * Layouts with large gutters.
+     */
 
     .#{$inuit-namespace}layout--large,
     %#{$inuit-namespace}layout--large {
@@ -113,11 +115,11 @@ $inuit-global-border-box: false !default;
 
 
 
-/**
- * Layout items without gutters.
- */
-
 @if ($inuit-enable-layout--flush == true) {
+
+    /**
+     * Layouts with no gutters.
+     */
 
     .#{$inuit-namespace}layout--flush,
     %#{$inuit-namespace}layout--flush {
@@ -136,12 +138,12 @@ $inuit-global-border-box: false !default;
 
 
 
-/**
- * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your markup
- * will display in order 4, 3, 2, 1 on your page.
- */
-
 @if ($inuit-enable-layout--rev == true) {
+
+    /**
+     * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+     * markup will display in order 4, 3, 2, 1 on your page.
+     */
 
     .#{$inuit-namespace}layout--rev,
     %#{$inuit-namespace}layout--rev {
@@ -162,11 +164,11 @@ $inuit-global-border-box: false !default;
 
 
 
-/**
- * Align layout items to the vertical centers or bottoms of each other.
- */
-
 @if ($inuit-enable-layout--middle == true) {
+
+    /**
+     * Align layout items to the vertical centers of each other.
+     */
 
     .#{$inuit-namespace}layout--middle,
     %#{$inuit-namespace}layout--middle {
@@ -181,6 +183,10 @@ $inuit-global-border-box: false !default;
 }
 
 @if ($inuit-enable-layout--bottom == true) {
+
+    /**
+     * Align layout items to the vertical bottoms of each other.
+     */
 
     .#{$inuit-namespace}layout--bottom,
     %#{$inuit-namespace}layout--bottom {
@@ -198,11 +204,11 @@ $inuit-global-border-box: false !default;
 
 
 
-/**
- * Make the layout items fill up from the right hand side.
- */
-
 @if ($inuit-enable-layout--right == true) {
+
+    /**
+     * Make the layout items fill up from the right hand side.
+     */
 
     .#{$inuit-namespace}layout--right,
     %#{$inuit-namespace}layout--right {
@@ -217,11 +223,11 @@ $inuit-global-border-box: false !default;
 
 }
 
-/**
- * Make the layout items fill up from the center outward.
- */
-
 @if ($inuit-enable-layout--center == true) {
+
+    /**
+     * Make the layout items fill up from the center outward.
+     */
 
     .#{$inuit-namespace}layout--center,
     %#{$inuit-namespace}layout--center {
