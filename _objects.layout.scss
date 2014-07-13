@@ -22,6 +22,7 @@ $inuit-enable-layout--middle:   false !default;
 $inuit-enable-layout--bottom:   false !default;
 $inuit-enable-layout--right:    false !default;
 $inuit-enable-layout--center:   false !default;
+$inuit-enable-layout--auto:     false !default;
 
 
 
@@ -236,6 +237,27 @@ $inuit-global-border-box: false !default;
         > .#{$inuit-namespace}layout__item,
         > %#{$inuit-namespace}layout__item {
             text-align: left;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($inuit-enable-layout--auto == true) {
+
+    /**
+     * Cause layout items to take up a non-explicit amount of width.
+     */
+    .#{$inuit-namespace}layout--auto,
+    %#{$inuit-namespace}layout--auto {
+
+        > .#{$inuit-namespace}layout__item,
+        > %#{$inuit-namespace}layout__item {
+            width: auto;
         }
 
     }
