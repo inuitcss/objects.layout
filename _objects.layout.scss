@@ -10,6 +10,8 @@
  */
 
 // Predefine the variables below in order to alter and enable specific features.
+$inuit-layout-namespace:        $inuit-namespace !default;
+
 $inuit-layout-gutter:           $inuit-base-spacing-unit !default;
 $inuit-layout-gutter--small:    halve($inuit-layout-gutter) !default;
 $inuit-layout-gutter--large:    double($inuit-layout-gutter) !default;
@@ -40,8 +42,8 @@ $inuit-global-border-box: false !default;
 /**
  * Begin a layout group.
  */
-.#{$inuit-namespace}layout,
-%#{$inuit-namespace}layout {
+.#{$inuit-layout-namespace}layout,
+%#{$inuit-layout-namespace}layout {
     list-style: none;
     margin:  0;
     padding: 0;
@@ -55,8 +57,8 @@ $inuit-global-border-box: false !default;
      * 4. Full-width unless told to behave otherwise.
      * 5. Required to combine fluid widths and fixed gutters.
      */
-    .#{$inuit-namespace}layout__item,
-    %#{$inuit-namespace}layout__item {
+    .#{$inuit-layout-namespace}layout__item,
+    %#{$inuit-layout-namespace}layout__item {
         display: inline-block; /* [1] */
         padding-left: $inuit-layout-gutter; /* [2] */
         vertical-align: top; /* [3] */
@@ -80,12 +82,12 @@ $inuit-global-border-box: false !default;
      * Layouts with small gutters.
      */
 
-    .#{$inuit-namespace}layout--small,
-    %#{$inuit-namespace}layout--small {
+    .#{$inuit-layout-namespace}layout--small,
+    %#{$inuit-layout-namespace}layout--small {
         margin-left: -($inuit-layout-gutter--small);
 
-        > .#{$inuit-namespace}layout__item,
-        > %#{$inuit-namespace}layout__item {
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
             padding-left: $inuit-layout-gutter--small;
         }
 
@@ -99,12 +101,12 @@ $inuit-global-border-box: false !default;
      * Layouts with large gutters.
      */
 
-    .#{$inuit-namespace}layout--large,
-    %#{$inuit-namespace}layout--large {
+    .#{$inuit-layout-namespace}layout--large,
+    %#{$inuit-layout-namespace}layout--large {
         margin-left: -($inuit-layout-gutter--large);
 
-        > .#{$inuit-namespace}layout__item,
-        > %#{$inuit-namespace}layout__item {
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
             padding-left: $inuit-layout-gutter--large;
         }
 
@@ -122,12 +124,12 @@ $inuit-global-border-box: false !default;
      * Layouts with no gutters.
      */
 
-    .#{$inuit-namespace}layout--flush,
-    %#{$inuit-namespace}layout--flush {
+    .#{$inuit-layout-namespace}layout--flush,
+    %#{$inuit-layout-namespace}layout--flush {
         margin-left: 0;
 
-        > .#{$inuit-namespace}layout__item,
-        > %#{$inuit-namespace}layout__item {
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
             padding-left: 0;
         }
 
@@ -146,13 +148,13 @@ $inuit-global-border-box: false !default;
      * markup will display in order 4, 3, 2, 1 on your page.
      */
 
-    .#{$inuit-namespace}layout--rev,
-    %#{$inuit-namespace}layout--rev {
+    .#{$inuit-layout-namespace}layout--rev,
+    %#{$inuit-layout-namespace}layout--rev {
         direction: rtl;
         text-align: left;
 
-        > .#{$inuit-namespace}layout__item,
-        > %#{$inuit-namespace}layout__item {
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
             direction: ltr;
             text-align: left;
         }
@@ -171,11 +173,11 @@ $inuit-global-border-box: false !default;
      * Align layout items to the vertical centers of each other.
      */
 
-    .#{$inuit-namespace}layout--middle,
-    %#{$inuit-namespace}layout--middle {
+    .#{$inuit-layout-namespace}layout--middle,
+    %#{$inuit-layout-namespace}layout--middle {
 
-        > .#{$inuit-namespace}layout__item,
-        > %#{$inuit-namespace}layout__item {
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
             vertical-align: middle;
         }
 
@@ -189,11 +191,11 @@ $inuit-global-border-box: false !default;
      * Align layout items to the vertical bottoms of each other.
      */
 
-    .#{$inuit-namespace}layout--bottom,
-    %#{$inuit-namespace}layout--bottom {
+    .#{$inuit-layout-namespace}layout--bottom,
+    %#{$inuit-layout-namespace}layout--bottom {
 
-        > .#{$inuit-namespace}layout__item,
-        > %#{$inuit-namespace}layout__item {
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
             vertical-align: bottom;
         }
 
@@ -211,12 +213,12 @@ $inuit-global-border-box: false !default;
      * Make the layout items fill up from the right hand side.
      */
 
-    .#{$inuit-namespace}layout--right,
-    %#{$inuit-namespace}layout--right {
+    .#{$inuit-layout-namespace}layout--right,
+    %#{$inuit-layout-namespace}layout--right {
         text-align: right;
 
-        > .#{$inuit-namespace}layout__item,
-        > %#{$inuit-namespace}layout__item {
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
             text-align: left;
         }
 
@@ -230,12 +232,12 @@ $inuit-global-border-box: false !default;
      * Make the layout items fill up from the center outward.
      */
 
-    .#{$inuit-namespace}layout--center,
-    %#{$inuit-namespace}layout--center {
+    .#{$inuit-layout-namespace}layout--center,
+    %#{$inuit-layout-namespace}layout--center {
         text-align: center;
 
-        > .#{$inuit-namespace}layout__item,
-        > %#{$inuit-namespace}layout__item {
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
             text-align: left;
         }
 
@@ -252,11 +254,11 @@ $inuit-global-border-box: false !default;
     /**
      * Cause layout items to take up a non-explicit amount of width.
      */
-    .#{$inuit-namespace}layout--auto,
-    %#{$inuit-namespace}layout--auto {
+    .#{$inuit-layout-namespace}layout--auto,
+    %#{$inuit-layout-namespace}layout--auto {
 
-        > .#{$inuit-namespace}layout__item,
-        > %#{$inuit-namespace}layout__item {
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
             width: auto;
         }
 

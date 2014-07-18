@@ -1,6 +1,6 @@
 {
   "name": "inuit-layout",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/inuitcss/objects.layout",
   "authors": [
     "Harry Roberts <harry@csswizardry.com>"
@@ -14,7 +14,7 @@
   ],
   "license": "Apache",
   "dependencies": {
-    "inuit-defaults": "~0.1.0",
-    "inuit-functions": "~0.1.0"
+    "inuit-defaults": "~0.1.4",
+    "inuit-functions": "~0.2.0"
   }
 }
