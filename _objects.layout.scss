@@ -13,11 +13,15 @@
 $inuit-layout-namespace:        $inuit-namespace !default;
 
 $inuit-layout-gutter:           $inuit-base-spacing-unit !default;
-$inuit-layout-gutter--small:    halve($inuit-layout-gutter) !default;
-$inuit-layout-gutter--large:    double($inuit-layout-gutter) !default;
+$inuit-layout-gutter--tiny:       quarter($inuit-layout-gutter) !default;
+$inuit-layout-gutter--small:        halve($inuit-layout-gutter) !default;
+$inuit-layout-gutter--large:       double($inuit-layout-gutter) !default;
+$inuit-layout-gutter--huge:     quadruple($inuit-layout-gutter) !default;
 
+$inuit-enable-layout--tiny:     false !default;
 $inuit-enable-layout--small:    false !default;
 $inuit-enable-layout--large:    false !default;
+$inuit-enable-layout--huge:     false !default;
 $inuit-enable-layout--flush:    false !default;
 $inuit-enable-layout--rev:      false !default;
 $inuit-enable-layout--middle:   false !default;
@@ -76,6 +80,25 @@ $inuit-global-border-box: false !default;
 
 
 
+@if ($inuit-enable-layout--tiny == true) {
+
+    /**
+     * Layouts with tiny gutters.
+     */
+
+    .#{$inuit-layout-namespace}layout--tiny,
+    %#{$inuit-layout-namespace}layout--tiny {
+        margin-left: -($inuit-layout-gutter--tiny);
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            padding-left: $inuit-layout-gutter--tiny;
+        }
+
+    }
+
+}
+
 @if ($inuit-enable-layout--small == true) {
 
     /**
@@ -108,6 +131,25 @@ $inuit-global-border-box: false !default;
         > .#{$inuit-layout-namespace}layout__item,
         > %#{$inuit-layout-namespace}layout__item {
             padding-left: $inuit-layout-gutter--large;
+        }
+
+    }
+
+}
+
+@if ($inuit-enable-layout--huge == true) {
+
+    /**
+     * Layouts with huge gutters.
+     */
+
+    .#{$inuit-layout-namespace}layout--huge,
+    %#{$inuit-layout-namespace}layout--huge {
+        margin-left: -($inuit-layout-gutter--huge);
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            padding-left: $inuit-layout-gutter--huge;
         }
 
     }
