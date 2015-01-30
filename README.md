@@ -7,3 +7,7 @@ the traditional grid system. It is based on
 Install using Bower:
 
     $ bower install --save inuit-layout
+
+Install using npm:
+
+    $ npm install --save inuit-layout
